@@ -19,10 +19,18 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?
+   
+    3 variables, 84 observations
 
 2.  What type of data (according to R) are in each of the vectors?
 
+    height: numeric
+    age: numeric
+    Seed: ordered factor
+
 3.  What command could you use to force the Seed data to be an integer?
+
+    ```Loblolly$Seed = as.integer(Loblolly$Seed)```
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
