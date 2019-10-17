@@ -41,8 +41,9 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
     
-    ```{r}
+    ```{r echo=TRUE}
     Loblolly$date = Sys.Date()
+    head(Loblolly)
     ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
@@ -59,7 +60,7 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
     
-    ```{r}
+```{r eval = FALSE}
     list(
         c("Mon","Tue","Wed","Thu","Fri","Sat","Sun"),
         c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),
@@ -67,44 +68,29 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     )
     ```
 
-For example:
-
-    my_list
-
-    ## [[1]]
-    ## [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
-    ## 
-    ## [[2]]
-    ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
-    ## [12] "Dec"
-    ## 
-    ## [[3]]
-    ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-    ## [24] 24 25 26 27 28 29 30 31
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
 
-<!-- -->
+    ```{r}
+    pixar = data.frame(
+        Dory = c(1,2,3,4),
+        Edna = c(5,1,2,3),
+        Eva = c(4,5,1,2),
+        Boo = c(3,4,5,1),
+        Violet = c(2,3,4,5),
+        row.names = c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+    )
+    ```
 
-    my_matrix
-
-    ##             Dory Edna Eva Boo Violet
-    ## FindingNemo    1    5   4   3      2
-    ## Incredibles    2    1   5   4      3
-    ## Wall-E         3    2   1   5      4
-    ## MonstersInc    4    3   2   1      5
 
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
-For example:
+    ```{r}
+    pixar$Violet = NULL
+    pixar = pixar == 1
+    ```
 
-<!-- -->
-
-    ##               Dory    Edna   
-    ## FindingNemo "TRUE"  "FALSE"
-    ## Incredibles "FALSE" "TRUE"
-    
 ***
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
