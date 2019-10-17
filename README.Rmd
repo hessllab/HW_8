@@ -25,27 +25,47 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 2.  What type of data (according to R) are in each of the vectors?
 
     height: numeric
+    
     age: numeric
+    
     Seed: ordered factor
 
 3.  What command could you use to force the Seed data to be an integer?
 
-    ```Loblolly$Seed = as.integer(Loblolly$Seed)```
+    ```{r}
+    Loblolly$Seed = as.integer(Loblolly$Seed)
+    ```
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+    
+    ```{r}
+    Loblolly$date = Sys.Date()
+    ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+    
+    ```{r}
+    Loblolly$mature = Loblolly$age >= 10
+    ```
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
 
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
+    
+    ```{r}
+    list(
+        c("Mon","Tue","Wed","Thu","Fri","Sat","Sun"),
+        c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),
+        1:31
+    )
+    ```
 
 For example:
 
