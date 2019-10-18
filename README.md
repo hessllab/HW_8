@@ -58,7 +58,12 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
-
+    
+    ```months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+    weekdays <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+    days <- (1:31)
+    my_list <- list(weekdays, months, days) ```
+    
 For example:
 
     my_list
@@ -76,7 +81,13 @@ For example:
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
-
+    
+    ```
+    matrix(0, ncol=5, nrow=4, data=seq(1:5))
+    colnames(my_matrix) <- c("Dory", "Edna", "Eva", "Boo", "Violet")
+    rownames(my_matrix) <- c("FindingNemo", "Incredibles", "Wall-E", "MonstersInc")
+    ```
+    
 <!-- -->
 
     my_matrix
