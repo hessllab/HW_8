@@ -63,7 +63,8 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     months <- month.abb
     weekdays <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     days <- (1:31)
-    my_list <- list(weekdays, months, days) ```
+    my_list <- list(weekdays, months, days) 
+    ```
     
 For example:
 
