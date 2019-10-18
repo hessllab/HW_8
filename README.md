@@ -24,16 +24,30 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 
 2.  What type of data (according to R) are in each of the vectors?
 
-    __Height is a double, age is a double, and seed is an integer.__
+    __Height is a double, age is a double, and seed is an integer.__  
     
 3.  What command could you use to force the Seed data to be an integer?
 
-    __seed_int <- as.integer(Loblolly$Seed)__
+    `seed_int <- as.integer(Loblolly$Seed)`
     
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+    
+    `Loblolly$date <- Sys.Date()`
+    ```
+    Loblolly
+    
+        height age Seed       date
+    1    4.51   3  301 2019-10-18
+    15  10.89   5  301 2019-10-18
+    29  28.72  10  301 2019-10-18
+    43  41.74  15  301 2019-10-18
+    57  52.70  20  301 2019-10-18
+    71  60.92  25  301 2019-10-18
+    2    4.55   3  303 2019-10-18
+    ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
