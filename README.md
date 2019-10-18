@@ -59,7 +59,8 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
     
-    ```months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+    ```
+    months <- month.abb
     weekdays <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
     days <- (1:31)
     my_list <- list(weekdays, months, days) ```
