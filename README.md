@@ -19,6 +19,7 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?
+Using str(loblolly), we can see that there are 3 variables and 84 observations in the dataset.
 
 2.  What type of data (according to R) are in each of the vectors?
 
