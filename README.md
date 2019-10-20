@@ -43,6 +43,8 @@ Loblolly$date <- date()
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+    
+Loblolly$mature <- ifelse(Loblolly$age >= 10, "True", "False")
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
