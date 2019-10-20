@@ -20,14 +20,25 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 
 1.  How many variables and how many observations are there?
 
+Using str(loblolly), we can see that there are 3 variables and 84 observations in the dataset.
+
 2.  What type of data (according to R) are in each of the vectors?
 
+typeof(Loblolly$height), yields double
+typeof(Loblolly$seed), yields integer
+typeof(Loblolly$age), yields double
+
 3.  What command could you use to force the Seed data to be an integer?
+
+Loblolly$Seed <- as.integer(Loblolly$Seed)
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+    
+Loblolly$date <- date()
+
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
