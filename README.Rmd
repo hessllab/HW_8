@@ -95,3 +95,20 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
 
+Importing data, naming columns and coercing a column that was not read correctly: 
+```{r}
+SoilMoisture<-read.csv("191008_MC_SM_2019_10_08_17_50_06.csv",header = FALSE) # Read csv file without headers
+names(SoilMoisture)<-c("Date_Time","Record","SM1","SM2","SM3","SM4","Temp1","Temp2") # Name variables
+SoilMoisture$Date_Time<-as.POSIXct(SoilMoisture$Date_Time,format = "%Y-%m-%d %H:%M:%S",tz="EST") # Coerce first column as POSIXct - a format for Date and Times
+```
+
+Here is a snippet of the Data:
+```{r}
+head(SoilMoisture)
+```
+
+The function ```str()``` is useful to know the type of each vector in the data frame, in this case we have POSIXct, integer and numeric vectors:
+```{r}
+str(SoilMoisture)
+```
+
