@@ -52,6 +52,18 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+    
+    ```
+    count = 0
+    for (obs in Loblolly$age){
+    count = count + 1
+    if (obs > 10){
+        Loblolly$mature[count] <- TRUE
+    }else {
+        Loblolly$mature[count] <- FALSE
+        }
+    }
+    ```
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
@@ -85,7 +97,7 @@ For example:
     and fill it as follows:
     
     ```
-    matrix(0, ncol=5, nrow=4, data=seq(1:5))
+    my_matrix <- matrix(0, ncol=5, nrow=4, data=seq(1:5))
     colnames(my_matrix) <- c("Dory", "Edna", "Eva", "Boo", "Violet")
     rownames(my_matrix) <- c("FindingNemo", "Incredibles", "Wall-E", "MonstersInc")
     ```
@@ -102,13 +114,10 @@ For example:
 
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
-For example:
-
-<!-- -->
-
-    ##               Dory    Edna   
-    ## FindingNemo "TRUE"  "FALSE"
-    ## Incredibles "FALSE" "TRUE"
+    ```
+    my_matrix <- my_matrix[,-4]
+    
+    ```
     
 ***
 #### Final Question to Be Completed with Your Partner
