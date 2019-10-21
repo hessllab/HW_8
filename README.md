@@ -79,7 +79,8 @@ For example:
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
-mymatrix <- (c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE)   
+    
+mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE)   
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 
@@ -96,6 +97,11 @@ rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
 For example:
+
+mymatrix <- matrix(FALSE, nrow=4, ncol=4, byrow=FALSE)
+diag(mymatrix)<- TRUE
+colnames(mymatrix)<-c("Dory","Edna","Eva","Boo")
+rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 
 <!-- -->
 
