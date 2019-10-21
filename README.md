@@ -51,6 +51,16 @@ Loblolly$mature <- ifelse(Loblolly$age >= 10, "True", "False")
 
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
+    
+days <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
+
+months <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+
+numbers <- 1:31
+
+mylist <- list(days,months,numbers)
+mylist
+    
 
 For example:
 
@@ -69,6 +79,9 @@ For example:
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
+mymatrix <- (c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE)   
+colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
+rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 
 <!-- -->
 
