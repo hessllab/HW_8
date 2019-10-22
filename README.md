@@ -39,6 +39,15 @@ Loblolly$Seed <- as.integer(Loblolly$Seed)
     
 Loblolly$date <- date()
 
+```
+ height age Seed                     date mature
+1    4.51   3   10 Sun Oct 20 17:41:55 2019  False
+15  10.89   5   10 Sun Oct 20 17:41:55 2019  False
+29  28.72  10   10 Sun Oct 20 17:41:55 2019   True
+43  41.74  15   10 Sun Oct 20 17:41:55 2019   True
+57  52.70  20   10 Sun Oct 20 17:41:55 2019   True
+```
+
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
