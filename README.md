@@ -56,12 +56,12 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     ```
     count = 0
     for (obs in Loblolly$age){
-    count = count + 1
-    if (obs > 10){
-        Loblolly$mature[count] <- TRUE
-    }else {
-        Loblolly$mature[count] <- FALSE
-        }
+        count = count + 1
+        if (obs >= 10){
+            Loblolly$mature[count] <- TRUE
+        }else {
+            Loblolly$mature[count] <- FALSE
+            }
     }
     ```
 
