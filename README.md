@@ -98,4 +98,20 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 ***
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
+    ```
+    airQualityData <- read.csv(file = "pa_wv_annual.csv", header = TRUE, sep = ",")
+    
+    #   SITE_ID YEAR   DATEON  DATEOFF SO2_CONC SO4_CONC NO3_CONC
+    # 1   CDR119 2018 01/02/18 01/01/19    0.401    1.099    0.298
+    # 2   PAR107 2018 01/02/18 01/01/19    0.489    1.124    0.459
+    # 3   CDR119 2017 01/03/17 01/02/18    0.586    1.212    0.321
+    # 4   CDR119 2016 12/29/15 01/03/17    0.599    1.325    0.264
+    # 5   PSU106 2018 01/02/18 01/01/19    0.644    1.231    1.076
+    
+    > typeof(airQualityData$DateOn)
+    [1] "NULL"
+    > typeof(airQualityData$DateOff)
+    [1] "NULL"
+    > airQualityData$DATEON <- as.character.Date(airQualityData$DATEON)
+    > airQualityData$DATEOFF <- as.character.Date(airQualityData$DATEOFF)
 
