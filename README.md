@@ -34,12 +34,12 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     `Loblolly$date <- Sys.Date()`
     ```
        height age Seed       date
-        1    4.51   3   10 2019-10-22
-        15  10.89   5   10 2019-10-22
-        29  28.72  10   10 2019-10-22
-        43  41.74  15   10 2019-10-22
-        57  52.70  20   10 2019-10-22
-        71  60.92  25   10 2019-10-22
+    1    4.51   3  301 2019-10-22
+    15  10.89   5  301 2019-10-22
+    29  28.72  10  301 2019-10-22
+    43  41.74  15  301 2019-10-22
+    57  52.70  20  301 2019-10-22
+    71  60.92  25  301 2019-10-22
 ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
