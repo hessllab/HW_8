@@ -78,21 +78,6 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     my_list <- list(weekdays, months, days) 
     ```
     
-For example:
-
-    my_list
-
-    ## [[1]]
-    ## [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
-    ## 
-    ## [[2]]
-    ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
-    ## [12] "Dec"
-    ## 
-    ## [[3]]
-    ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-    ## [24] 24 25 26 27 28 29 30 31
-
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
     
@@ -102,21 +87,12 @@ For example:
     rownames(my_matrix) <- c("FindingNemo", "Incredibles", "Wall-E", "MonstersInc")
     ```
     
-<!-- -->
-
-    my_matrix
-
-    ##             Dory Edna Eva Boo Violet
-    ## FindingNemo    1    5   4   3      2
-    ## Incredibles    2    1   5   4      3
-    ## Wall-E         3    2   1   5      4
-    ## MonstersInc    4    3   2   1      5
 
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
     ```
     my_matrix <- my_matrix[,-4]
-    
+    my_matrix[1:12] <- c(TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE)
     ```
     
 ***
