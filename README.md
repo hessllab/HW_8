@@ -25,7 +25,9 @@ Using str(loblolly), we can see that there are 3 variables and 84 observations i
 2.  What type of data (according to R) are in each of the vectors?
 
 typeof(Loblolly$height), yields double
+
 typeof(Loblolly$seed), yields integer
+
 typeof(Loblolly$age), yields double
 
 3.  What command could you use to force the Seed data to be an integer?
@@ -40,12 +42,12 @@ Loblolly$Seed <- as.integer(Loblolly$Seed)
 Loblolly$date <- date()
 
 ```
- height age Seed                     date mature
-1    4.51   3   10 Sun Oct 20 17:41:55 2019  False
-15  10.89   5   10 Sun Oct 20 17:41:55 2019  False
-29  28.72  10   10 Sun Oct 20 17:41:55 2019   True
-43  41.74  15   10 Sun Oct 20 17:41:55 2019   True
-57  52.70  20   10 Sun Oct 20 17:41:55 2019   True
+ height age Seed                     date 
+1    4.51   3   10 Sun Oct 20 17:41:55 2019  
+15  10.89   5   10 Sun Oct 20 17:41:55 2019  
+29  28.72  10   10 Sun Oct 20 17:41:55 2019   
+43  41.74  15   10 Sun Oct 20 17:41:55 2019   
+57  52.70  20   10 Sun Oct 20 17:41:55 2019   
 ```
 
 
@@ -54,6 +56,18 @@ Loblolly$date <- date()
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
     
 Loblolly$mature <- ifelse(Loblolly$age >= 10, "True", "False")
+
+```
+height age Seed                     date mature
+1    4.51   3   10 Sun Oct 20 17:41:55 2019  False
+15  10.89   5   10 Sun Oct 20 17:41:55 2019  False
+29  28.72  10   10 Sun Oct 20 17:41:55 2019   True
+43  41.74  15   10 Sun Oct 20 17:41:55 2019   True
+57  52.70  20   10 Sun Oct 20 17:41:55 2019   True
+71  60.92  25   10 Sun Oct 20 17:41:55 2019   True
+2    4.55   3   13 Sun Oct 20 17:41:55 2019  False
+16  10.92   5   13 Sun Oct 20 17:41:55 2019  False
+```
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
@@ -68,6 +82,7 @@ months <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','D
 numbers <- 1:31
 
 mylist <- list(days,months,numbers)
+
 mylist
     
 
@@ -89,8 +104,10 @@ For example:
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
     
-mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE)   
+mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE) 
+
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
+
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 
 <!-- -->
@@ -108,8 +125,11 @@ rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 For example:
 
 mymatrix <- matrix(FALSE, nrow=4, ncol=4, byrow=FALSE)
+
 diag(mymatrix)<- TRUE
+
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo")
+
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 
 <!-- -->
