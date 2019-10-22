@@ -19,18 +19,22 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there? 
+    
     3 variables and 84 observations
 
 2.  What type of data (according to R) are in each of the vectors?
+    
     Height is a double, age is a double and seed is an integer
 
 3.  What command could you use to force the Seed data to be an integer?
-    Loblolly$Seed <- as.integer(Loblolly$Seed)
+    
+    `Loblolly$Seed <- as.integer(Loblolly$Seed)`
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+    
     `Loblolly$date <- Sys.Date()`
     ```
        height age Seed       date
@@ -40,11 +44,12 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     43  41.74  15  301 2019-10-22
     57  52.70  20  301 2019-10-22
     71  60.92  25  301 2019-10-22
-```
+    ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+    
     `Loblolly$mature <- as.logical(Loblolly$age>=10)`
 
 ------------------------------------------------------------------------
