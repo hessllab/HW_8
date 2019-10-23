@@ -98,4 +98,4 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     [1] "NULL"
     > airQualityData$DATEON <- as.character.Date(airQualityData$DATEON)
     > airQualityData$DATEOFF <- as.character.Date(airQualityData$DATEOFF)
-    ```
+```
