@@ -25,30 +25,39 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?
-
-Using str(loblolly)
+``` {r}
+str(loblolly)
+```
 
 
 #we can see that there are 3 variables and 84 observations in the dataset.
 
 2.  What type of data (according to R) are in each of the vectors?
 
-typeof(Loblolly$height), #yields double
+``` {r}
+typeof(Loblolly$height) #yields double
+```
 
-typeof(Loblolly$seed), yields integer
+``` {r}
+typeof(Loblolly$seed) #yields integer
+```
 
-typeof(Loblolly$age), yields double
+```{r}
+typeof(Loblolly$age) #yields double
+```
 
 3.  What command could you use to force the Seed data to be an integer?
-
+``` {r}
 Loblolly$Seed <- as.integer(Loblolly$Seed)
+```
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
-    
+``` {r}    
 Loblolly$date <- date()
+```
 
 ```
  height age Seed                     date 
@@ -63,8 +72,9 @@ Loblolly$date <- date()
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
-    
+```{r}    
 Loblolly$mature <- ifelse(Loblolly$age >= 10, "True", "False")
+```
 
 ```
 height age Seed                     date mature
@@ -83,17 +93,23 @@ height age Seed                     date mature
 
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
-    
+
+```{r}    
 days <- c('Mon','Tue','Wed','Thu','Fri','Sat','Sun')
+
+
 
 months <- c('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
 
+
 numbers <- 1:31
+
 
 mylist <- list(days,months,numbers)
 
+
 mylist
-    
+```    
 
 For example:
 
@@ -112,12 +128,17 @@ For example:
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
-    
+```{r}    
 mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=5, byrow=FALSE) 
+
 
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
 
+
+
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+```
+
 
 <!-- -->
 
@@ -132,7 +153,7 @@ rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
 For example:
-
+```{r}
 mymatrix <- matrix(FALSE, nrow=4, ncol=4, byrow=FALSE)
 
 diag(mymatrix)<- TRUE
@@ -140,6 +161,7 @@ diag(mymatrix)<- TRUE
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo")
 
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+```
 
 <!-- -->
 
@@ -150,4 +172,11 @@ rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 ***
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
+
+Bio <- read.csv("Biostats.csv")
+Bio
+
+typeof(Bio$Name) #integer
+
+
 
