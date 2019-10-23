@@ -32,18 +32,18 @@ head(Loblolly, n=5)
 
 2.  What type of data (according to R) are in each of the vectors?  
 ```{r}
-str(loblolly$height)
-typeof(loblolly$height)
+str(Loblolly$height)
+typeof(Loblolly$height)
 ```
 
 ```{r}
-str(loblolly$age)
-typeof(loblolly$age)
+str(Loblolly$age)
+typeof(Loblolly$age)
 ```
 
 ```{r}
-str(loblolly$Seed)
-typeof(loblolly$Seed)
+str(Loblolly$Seed)
+typeof(Loblolly$Seed)
 ```
 Height and age are the "double" data type, while Seed is the type "integer". However, while height and age are numeric, Seed is an ordered factor. 
 
