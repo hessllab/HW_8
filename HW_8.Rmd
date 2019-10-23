@@ -137,6 +137,8 @@ colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
 
 
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+
+mymatrix
 ```
 
 
@@ -161,6 +163,8 @@ diag(mymatrix)<- TRUE
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo")
 
 rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+
+mymatrix
 ```
 
 <!-- -->
@@ -172,11 +176,44 @@ rownames(mymatrix)<-c("FindingNemo","Incredibles","Wall-E","MonstersInc")
 ***
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
-
+```{r}
 Bio <- read.csv("Biostats.csv")
 Bio
+```
+```
+Name      Sex Age Height..in. Weight..lbs.
+1  Alex        M  41          74          170
+2  Bert        M  42          68          166
+3  Carl        M  32          70          155
+4  Dave        M  39          72          167
+5  Elly        F  30          66          124
+6  Fran        F  33          66          115
+7  Gwen        F  26          64          121
+8  Hank        M  30          71          158
+9  Ivan        M  53          72          175
+10 Jake        M  32          69          143
+```
 
+
+```{r}
 typeof(Bio$Name) #integer
+```
+
+```{r}
+typeof(Bio$Sex) #integer
+```
+
+```{r}
+typeof(Bio$Age) #integer
+```
+
+```{r}
+typeof(Bio$Height..in.) #integer
+```
+
+```{r}
+typeof(Bio$Weight..lbs.) #integer
+```
 
 
 
