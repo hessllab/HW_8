@@ -26,11 +26,14 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 
 1.  How many variables and how many observations are there?
 
-Using str(loblolly), we can see that there are 3 variables and 84 observations in the dataset.
+Using str(loblolly)
+
+
+#we can see that there are 3 variables and 84 observations in the dataset.
 
 2.  What type of data (according to R) are in each of the vectors?
 
-typeof(Loblolly$height), yields double
+typeof(Loblolly$height), #yields double
 
 typeof(Loblolly$seed), yields integer
 
