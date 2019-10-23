@@ -19,10 +19,25 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?  
+```{r}
+nrow(Loblolly)
+```  
+```{r}  
+head(Loblolly, n=5)
+```  
         variables: 3  
         observations: 84  
 
 2.  What type of data (according to R) are in each of the vectors?  
+```{r}
+typeof(Loblolly$height)
+```
+```{r}
+typeof(Loblolly$age)
+```
+```{r}
+typeof(Loblolly$Seed)
+```
         height: double  
         age: double  
         Seed: integer  
@@ -36,14 +51,18 @@ as.integer(Loblolly$Seed)
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+
+New column can be added just by defining a new column in the Loblolly data. The date column is defined as a matrix consisting of 1 column, 84 rows, and data of today's date specified by `Sys.Date()`.
 ```{r}  
-Loblolly$date <- Loblolly$date <- matrix(ncol=1, nrow = 84, data = format(Sys.Date()))
+Loblolly$date <- matrix(ncol=1, nrow = 84, data = format(Sys.Date()))
 head(Loblolly, n = 5)
 ```   
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+
+
 ```{r}  
 Loblolly$mature <- matrix(ncol = 1, nrow = 84, data = Loblolly$age >= 10)
 head(Loblolly, n=5)
