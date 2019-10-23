@@ -81,3 +81,104 @@ For example:
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
 
+
+
+
+
+
+```{r}
+loblolly <- Loblolly
+```
+
+1. The dataset contains 84 observations of 3 variables.
+
+
+```{r}
+str(loblolly$height)
+typeof(loblolly$height)
+```
+
+```{r}
+str(loblolly$age)
+typeof(loblolly$age)
+```
+
+```{r}
+str(loblolly$Seed)
+typeof(loblolly$Seed)
+```
+
+2. Height and age are the "double" data type, while Seed is the type "integer". However, while height and age are numeric, Seed is an ordered factor. 
+
+3. To convert Seed to an integer, we could use the following command:
+
+```{r}
+loblolly$Seed <- as.integer (loblolly$Seed)
+```
+
+```{r}
+str(loblolly$Seed)
+typeof(loblolly$Seed)
+```
+
+4. To record the date in the computer as a column:
+
+```{r}
+loblolly$date <- Sys.Date()
+head(loblolly)
+```
+
+5. To add the 'mature' vector, we will use a for loop to create a column of 1s and 0s. Then, we will coerce it to logical:
+
+```{r}
+for (yr in 1:84)
+{
+  if (loblolly$age[yr] > 9){
+    loblolly$mature[yr] <- 1
+    }
+  else{
+    loblolly$mature[yr] <- 0
+  }
+}
+loblolly$mature <- as.logical(loblolly$mature)
+```
+
+6. To create the list:
+
+```{r}
+list_example <- list(c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"), month.abb, 1:31)
+list_example
+```
+
+7. We will create the matrix. Then, we will add row names and column names:
+
+```{r}
+my_matrix <- matrix(0, ncol=5, nrow=4, data=seq(1:5))
+colnames(my_matrix) <- c("Dory","Edna","Eva","Boo","Violet")
+rownames(my_matrix) <- c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+my_matrix
+```
+
+8. 
+
+First we must remove Violet from the matrix:
+
+```{r}
+my_matrix <- my_matrix[,-5]
+my_matrix
+```
+
+```{r}
+for (data in my_matrix){
+if(my_matrix[data] > 1){
+  my_matrix[data] = 0
+}
+}
+```
+
+
+```{r}
+class(my_matrix) <- "logical"
+my_matrix
+```
+
