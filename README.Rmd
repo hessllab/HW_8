@@ -142,21 +142,43 @@ my_matrix
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
 
-
+We will load the 'Planets' dataset
 ```{r}
 planets <- read.csv("planets.txt")
 head(planets, n=5)
 ```
+This dataset has five vectors. One of them is an extra column as a result of formatting in the .txt file. We can get rid of this column.
+```{r}
+planets <- planets[,-5]
+planets
+```
+
+Let's check what type of data each vector loaded in as
+
 ```{r}
 typeof(planets$Planet.Name)
 typeof(planets$Pl..Mass)
 typeof(planets$Pl..Radius)
 typeof(planets$Pl..Period)
 ```
+
+The only variable that loaded incorrectly is 'Planet.Name' which should be a character vector, not an integer.
+
 ```{r}
 planets$Planet.Name <- as.character(planets$Planet.Name)
 typeof(planets$Planet.Name)
 ```
+
+After changing 'Planet.Name', the types of vectors are as follows:
+
+```{r}
+typeof(planets$Planet.Name)
+typeof(planets$Pl..Mass)
+typeof(planets$Pl..Radius)
+typeof(planets$Pl..Period)
+```
+
+Here is a final snippet of the data:
 
 ```{r}
 head(planets, n=5)
