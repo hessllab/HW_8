@@ -104,7 +104,7 @@ For example:
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
     
-mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=6, byrow=FALSE) 
+mymatrix <- matrix(c(1,2,3,4,5), nrow=4, ncol=5, byrow=FALSE) 
 
 colnames(mymatrix)<-c("Dory","Edna","Eva","Boo","Violet")
 
