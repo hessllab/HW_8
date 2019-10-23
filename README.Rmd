@@ -19,65 +19,96 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?
+   
+    3 variables, 84 observations
 
 2.  What type of data (according to R) are in each of the vectors?
 
+    height: numeric
+    
+    age: numeric
+    
+    Seed: ordered factor
+
 3.  What command could you use to force the Seed data to be an integer?
+
+    ```{r}
+    Loblolly$Seed = as.integer(Loblolly$Seed)
+    ```
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
+    
+    ```{r echo=TRUE}
+    Loblolly$date = Sys.Date()
+    head(Loblolly)
+    ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
+    
+    ```{r}
+    Loblolly$mature = Loblolly$age >= 10
+    ```
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
 
 1.  Make a list that contains the abbreviated days of the week (‘Mon’,
     ‘Tue’, etc), months of the year, the numbers 1 through 31.
+    
+```{r eval = FALSE}
+    list(
+        c("Mon","Tue","Wed","Thu","Fri","Sat","Sun"),
+        c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),
+        1:31
+    )
+    ```
 
-For example:
-
-    my_list
-
-    ## [[1]]
-    ## [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
-    ## 
-    ## [[2]]
-    ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
-    ## [12] "Dec"
-    ## 
-    ## [[3]]
-    ##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
-    ## [24] 24 25 26 27 28 29 30 31
 
 2.  Write a command that will create a matrix with 4 rows and 5 columns
     and fill it as follows:
 
-<!-- -->
+    ```{r}
+    pixar = data.frame(
+        Dory = c(1,2,3,4),
+        Edna = c(5,1,2,3),
+        Eva = c(4,5,1,2),
+        Boo = c(3,4,5,1),
+        Violet = c(2,3,4,5),
+        row.names = c("FindingNemo","Incredibles","Wall-E","MonstersInc")
+    )
+    ```
 
-    my_matrix
-
-    ##             Dory Edna Eva Boo Violet
-    ## FindingNemo    1    5   4   3      2
-    ## Incredibles    2    1   5   4      3
-    ## Wall-E         3    2   1   5      4
-    ## MonstersInc    4    3   2   1      5
 
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
-For example:
+    ```{r}
+    pixar$Violet = NULL
+    pixar = pixar == 1
+    ```
 
-<!-- -->
-
-    ##               Dory    Edna   
-    ## FindingNemo "TRUE"  "FALSE"
-    ## Incredibles "FALSE" "TRUE"
-    
 ***
 #### Final Question to Be Completed with Your Partner
 4. Import a text dataset of your choice into R using `read.csv` (or `read.table` or any of the other `read.` options). Use type coercion to adjust any variables that are read in incorrectly.  Report a snippet of the data and define the type of each vector in the data.frame.
+
+Importing data, naming columns and coercing a column that was not read correctly: 
+```{r}
+SoilMoisture<-read.csv("191008_MC_SM_2019_10_08_17_50_06.csv",header = FALSE) # Read csv file without headers
+names(SoilMoisture)<-c("Date_Time","Record","SM1","SM2","SM3","SM4","Temp1","Temp2") # Name variables
+SoilMoisture$Date_Time<-as.POSIXct(SoilMoisture$Date_Time,format = "%Y-%m-%d %H:%M:%S",tz="EST") # Coerce first column as POSIXct - a format for Date and Times
+```
+
+Here is a snippet of the Data:
+```{r}
+head(SoilMoisture)
+```
+
+The function ```str()``` is useful to know the type of each vector in the data frame, in this case we have POSIXct, integer and numeric vectors:
+```{r}
+str(SoilMoisture)
+```
 
