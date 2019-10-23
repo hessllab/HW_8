@@ -93,15 +93,7 @@ my_matrix
 ```
 
 ```{r}
-for (data in my_matrix){
-if(my_matrix[data] > 1){
-  my_matrix[data] = 0
-}
-}
-```
-
-
-```{r}
-class(my_matrix) <- "logical"
+my_matrix <- my_matrix <= 1
 my_matrix
 ```
+
