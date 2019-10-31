@@ -19,10 +19,18 @@ Submit your answer as an .Rmd file using the following steps in GitHub:
 For the following questions, use the Loblolly dataset that comes with Base R. Loblolly contains some data about a common garden experiment involving loblolly pine trees. Load the Loblolly dataset and answer the following questions (1-5).
 
 1.  How many variables and how many observations are there?
+
+```{r}
+dim(Loblolly)
+```
    
     3 variables, 84 observations
 
 2.  What type of data (according to R) are in each of the vectors?
+
+```{r}
+typeof(Loblolly$height)
+```
 
     height: numeric
     
@@ -32,27 +40,27 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
 
 3.  What command could you use to force the Seed data to be an integer?
 
-    ```{r}
-    Loblolly$Seed = as.integer(Loblolly$Seed)
-    ```
+```{r}
+Loblolly$Seed = as.integer(Loblolly$Seed)
+```
 
 4.  Write command(s) that record the date according to your computer and
     adds it to Loblolly as a column (repeating the same value for all
     observations) called ‘date’. In snippet, report the head of your
     revised data.frame.
     
-    ```{r echo=TRUE}
-    Loblolly$date = Sys.Date()
-    head(Loblolly)
+```{r echo=TRUE}
+Loblolly$date = Sys.Date()
+head(Loblolly)
     ```
 
 5.  Add a new vector of data called ‘mature’ to the Loblolly data.frame
     that is a sequence of logical values such that any tree equal to or
     over the age of 10 is ‘TRUE’ and younger than 10 is ‘FALSE’
     
-    ```{r}
-    Loblolly$mature = Loblolly$age >= 10
-    ```
+```{r}
+Loblolly$mature = Loblolly$age >= 10
+```
 
 ------------------------------------------------------------------------
 #### For the following questions, create your own objects in R.
@@ -69,25 +77,22 @@ For the following questions, use the Loblolly dataset that comes with Base R. Lo
     ```
 
 
-2.  Write a command that will create a matrix with 4 rows and 5 columns
+2.  Write a command that will create a *matrix* with 4 rows and 5 columns
     and fill it as follows:
+```{r}
+dim_list <- list(c('FindingNemo', 'Incredibles', 'Wall-E', 'MonstersInc'), c('Dory', 'Edna', 'Eva', 'Boo', 'Violet'))
+my_mdat <- rep(1:5, 4)
+pixar <- matrix(data=my_mdat, nrow=4, ncol=5, byrow=F, dimnames=dim_list)
+```
 
-    ```{r}
-    pixar = data.frame(
-        Dory = c(1,2,3,4),
-        Edna = c(5,1,2,3),
-        Eva = c(4,5,1,2),
-        Boo = c(3,4,5,1),
-        Violet = c(2,3,4,5),
-        row.names = c("FindingNemo","Incredibles","Wall-E","MonstersInc")
-    )
-    ```
-
+```{r}
+pixar
+```
 
 3. Remove the Violet vector from the matrix and fill it with logical values that tell us which movies the characters were actually in.
 
     ```{r}
-    pixar$Violet = NULL
+    pixar[,-5]
     pixar = pixar == 1
     ```
 
