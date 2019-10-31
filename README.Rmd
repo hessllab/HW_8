@@ -1,7 +1,8 @@
 
 # Namiko & Zack - Homework 8
 
-=======
+=======  
+
 # HW_8
 ## R Practice with Data Structures
 
@@ -31,7 +32,10 @@ head(Loblolly, n=5)
 ```  
         variables: 3  
         observations: 84  
-
+```{r}
+#OR
+dim(Loblolly)
+```
 2.  What type of data (according to R) are in each of the vectors?  
 ```{r}
 str(Loblolly$height)
